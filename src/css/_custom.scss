@@ -1,0 +1,197 @@
+@import 'components/breadcrumb';
+@import 'components/color';
+@import 'components/group-item';
+@import 'components/info-panel';
+@import 'components/navbars';
+@import 'components/sidebar';
+@import 'components/splitter';
+@import 'components/table';
+@import 'components/widget';
+@import 'portlet/portlet';
+@import 'portlet/portlet_decorators';
+@import 'portlet/portlet_hello_world';
+@import 'custom_properties';
+body {
+    header {
+        .field-wrapper {
+            position: absolute;
+            right: 4px;
+            top: 2px;
+            a {
+                color: #fff;
+            }
+        }
+        .field-wrapper,
+        .form-group {
+            margin-bottom: 0;
+        }
+        .portlet {
+            margin-bottom: 0;
+            &:hover {
+                z-index: 1034;
+            }
+        }
+        .search-input {
+            font-size: 0.88rem;
+            padding: 0.28rem 2rem 0.28rem 1rem;
+        }
+        .text-default {
+            color: #6b6c7e;
+            font-weight: 600;
+        }
+        .user-personal-bar {
+            .fieldset {
+                position: relative;
+            }
+            .user-avatar-link .panel-notifications-count {
+                right: calc(100% - 0.75rem);
+                top: -0.35rem;
+            }
+        }
+    }
+    .user-avatar-link {
+        display: block;
+        position: relative;
+        .panel-notifications-count {
+            display: block;
+            margin: 0;
+            max-width: none;
+            position: absolute;
+            right: calc(100% - 0.7rem);
+            top: -0.4rem;
+        }
+        .text-default {
+            align-items: center;
+            display: flex;
+            .user-full-name {
+                margin-left: 0.5rem;
+                @include media-breakpoint-down(xs) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.btn-group+.info-panel {
+    @include media-breakpoint-up(sm) {
+        top: auto;
+    }
+}
+
+#footer {
+    background-color: $complementary-color;
+    color: #fff;
+    margin-top: 1rem;
+    >.container {
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+    }
+}
+
+#wrapper {
+    @import 'fontawesome-free/css/all.min.css';
+    @import 'intranet/scss/sb-admin-2.scss';
+    .navbar-nav.accordion {
+        display: inherit!important;
+        width: 100%!important;
+    }
+    .nav-item {
+        display: inherit!important;
+        font-family: inherit;
+        font-size: initial;
+    }
+    .text-center {
+        display: inherit!important;
+    }
+    .sidebar.nav-item.nav-link {
+        width: 100%!important;
+    }
+    .navbar-nav {
+        min-width: 16rem;
+    }
+    .navbar-nav.toggled {
+        min-width: fit-content!important;
+    }
+    .bg-gradient-primary {
+        background-color: var(--primary)!important;
+        background-image: linear-gradient( 180deg, var(--primary) 10%, var(--secondary) 100%)!important;
+        background-size: cover!important;
+    }
+    .navbar-nav.toggled .nav-item .collapse.show {
+        left: calc(4.4rem + 24px / 2)!important
+    }
+    .custom-dialog .control-menu-container {
+        display: none!important;
+    }
+    .carousel-item.img {
+        background-position: center!important;
+        background-size: cover!important;
+        position: relative;
+        width: 100%;
+    }
+    .portlet {
+        margin: 0!important;
+    }
+}
+
+.overlaymask-hidden {
+    display: none;
+}
+
+.custom-dialog {
+    .control-menu-container {
+        display: none!important;
+    }
+}
+
+.custom-dialog .lfr-product-menu-panel {
+    display: none!important;
+}
+
+iframe .lfr-product-menu-panel {
+    display: none!important;
+}
+
+.modal {
+    display: none;
+    height: 100%;
+}
+
+.modal.show {
+    display: block;
+}
+
+#notificationsModal {
+    width: 100vw;
+    display: none;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    top: 15vh;
+    left: 15vw;
+    bottom: 15vh;
+    right: 15vw;
+    z-index: 1055;
+    width: 70vw;
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+
+#notificationsModal .modal-dialog {
+    margin: 0!important;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content {
+    height: 100%!important;
+    border-radius: 0!important;
+}
+
+#notificationsModal iframe {
+    border: none!important;
+}
