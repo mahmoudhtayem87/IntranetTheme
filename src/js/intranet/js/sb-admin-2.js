@@ -1,3 +1,7 @@
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 function popup(url, title) {
     //notificationsModal
     $("#notificationsModalTitle").text(title);
