@@ -1,3 +1,61 @@
+function FixCommercePopups() {
+    $('a[href*="/p/"]').each(function(index, item) {
+        var href = $(item).attr("href");
+        $(item).attr("href", "");
+        $(item).attr("data-popup", "true");
+        var text = $(item).text();
+        if (text == null || text.length <= 0 || text == "") {
+            text = $(item).parent().find(".minium-card__name").text();
+        }
+        $(item).click(function(e) {
+            e.preventDefault();
+            popup(href, text);
+        });
+    });
+    $('a[href*="pending-orders"]').each(function(index, item) {
+        var href = $(item).attr("href");
+        $(item).attr("href", "");
+        $(item).attr("data-popup", "true");
+        var text = $(item).text();
+        if (text == null || text.length <= 0 || text == "") {
+            text = $(item).parent().find(".minium-card__name").text();
+        }
+        $(item).click(function(e) {
+            e.preventDefault();
+            popup(href, text);
+        });
+    });
+    $('.popup').each(function(index, item) {
+        var href = $(item).attr("href");
+        $(item).attr("data-popup", "true");
+        $(item).attr("href", "");
+        var text = $(item).text();
+        $(item).click(function(e) {
+            e.preventDefault();
+            popup(href, text);
+        });
+
+    });
+    $('button[data-onclick="toggleAccountSelector"]').on("click", function() {
+        $('a[href*="pending-orders"]').each(function(index, item) {
+            var href = $(item).attr("href");
+            $(item).attr("href", "");
+            $(item).attr("data-popup", "true");
+            var text = $(item).text();
+            if (text == null || text.length <= 0 || text == "") {
+                text = $(item).parent().find(".minium-card__name").text();
+            }
+            $(item).click(function(e) {
+                e.preventDefault();
+                popup(href, text);
+            });
+        });
+    });
+}
+$(function() {
+    // FixCommercePopups();
+});
+
 function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
