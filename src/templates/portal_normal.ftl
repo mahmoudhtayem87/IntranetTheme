@@ -19,7 +19,7 @@
     <@liferay.control_menu />
 
     <div class="d-flex flex-column min-vh-100">
-        <div class="d-flex flex-column flex-fill" id="wrapper">
+        <div class="d-flex flex-column flex-fill" id="wrapper" style='direction:${languageUtil.get(locale, "lang.dir")}'>
            
 
             <section class="${portal_content_css_class} flex-fill" id="content">
@@ -47,6 +47,8 @@
     <script src="${javascript_folder}/intranet/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="${javascript_folder}/intranet/js/sb-admin-2.js"></script>
+    <script src="${javascript_folder}/intranet/js/canvasjs.min.js"></script>
+    <script src="${javascript_folder}/intranet/js/familytree.js"></script>
 
 <!-- Modal -->
 <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
